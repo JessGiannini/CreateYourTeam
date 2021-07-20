@@ -83,28 +83,41 @@ const questionsNxt = [
   {
     // create a while true function to then create id tags for table of contents
     type: "list",
-    message:
-      "Which type of team member would you like to add? (Use arrow keys)",
+    message: "Which type of team member would you like to add?",
     name: "nextMember",
     choices: ["Engineer", "Intern", "I don't have another member to add."],
   },
 ];
 
-//prompts the user with the questions
-function promptUser() {
-  inquirer
-    .prompt(questionsMng, questionsEng, questionsInt)
-    .then((answers) => writeToFile("team.HTML", answers));
+function buildMng() {
+  inquirer.prompt(questionsMng).next(data);
 }
 
-function promptUserNxt() {
-  inquirer.prompt(questionsNxt);
+//prompts the user with the questions
+function promptUser() {
+  buildMng();
+  inquirer.prompt(questionsNxt).then((data) => {
+    switch (data.nextMember) {
+      case "Engineer":
+        //call inquier.prompt enginer questions
+        inquirer.prompt(questionsEng);
+        break;
+      case "Intern":
+        //call inquier.prompt
+        inquirer.prompt(questionsInt);
+        break;
+      default:
+        //print file
+        writeToFile();
+    }
+  });
   // .then((answers) => );
+  return questionsNxt;
 }
 
 // creates the html file
-function writeToFile(fileName, answers) {
-  let text = generateHTML(answers);
+function writeToFile(fileName, data) {
+  let text = generateHTML(data);
 
   fs.writeFile(fileName, text, (err) =>
     err ? console.log(err) : console.log("Success!")
@@ -113,6 +126,7 @@ function writeToFile(fileName, answers) {
 
 // TODO: Create a function to initialize app
 function init() {
+  buildMng();
   promptUser();
 }
 
