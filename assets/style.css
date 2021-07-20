@@ -1,3 +1,13 @@
+.jumbotron {
+  justify-content: center;
+  /* align-items: center; */
+  background-color: darkblue;
+  color: aliceblue;
+  width: auto;
+  height: 100px;
+  text-align: center;
+}
+
 #displaybox {
   /* position: absolute; */
   margin: 5px, 10px, 5px, 10px;
