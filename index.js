@@ -4,25 +4,27 @@ const fs = require("fs");
 const generateHTML = require("./utils/generateHTML.js");
 
 // TODO: Create an array of questions for user input
-const questionsMng = [
+const questionsEmployee = [
   {
     //# user input project title
     type: "input",
-    message: "What is the name of the team manager?",
-    name: "managerName",
+    message: "What is the name of the employee?",
+    name: "name",
   },
   {
     //title ## Description \n\n user input describtion
     type: "input",
-    message: "What is the ID of the team manager?",
-    name: "managerID",
+    message: "What is the ID of the employee?",
+    name: "id",
   },
   {
     //in description add [Live Link](user input project link)
     type: "input",
-    message: "What is the email of the team manager?",
-    name: "managerEmail",
+    message: "What is the email of the employee?",
+    name: "email",
   },
+];
+const questionsMng = [
   {
     //in description add [Live Link](user input project link)
     type: "input",
@@ -33,24 +35,6 @@ const questionsMng = [
 
 const questionsEng = [
   {
-    //link to id name
-    type: "input",
-    message: "What is the name of the team engineer?",
-    name: "engineerName",
-  },
-  {
-    //link to id id
-    type: "input",
-    message: "What is the ID of the team engineer?",
-    name: "engineerID",
-  },
-  {
-    //link to id email
-    type: "input",
-    message: "What is the email of the team engineer?",
-    name: "engineerEmail",
-  },
-  {
     //link to id email github
     type: "input",
     message: "What is the Git Hub of the team engineer?",
@@ -59,18 +43,6 @@ const questionsEng = [
 ];
 
 const questionsInt = [
-  {
-    //link to id name
-    type: "input",
-    message: "What is the name of the team intern?",
-    name: "internName",
-  },
-  {
-    //link to id email
-    type: "input",
-    message: "What is the email of the team intern?",
-    name: "internEmail",
-  },
   {
     //link to id school
     type: "input",
@@ -89,18 +61,20 @@ const questionsNxt = [
   },
 ];
 
-function buildMng() {
-  inquirer.prompt(questionsMng).next(data);
-}
+// function buildMng() {
+//   inquirer.prompt(questionsMng).next(data);
+// }
 
 //prompts the user with the questions
 function promptUser() {
-  buildMng();
+  
   inquirer.prompt(questionsNxt).then((data) => {
     switch (data.nextMember) {
       case "Engineer":
         //call inquier.prompt enginer questions
-        inquirer.prompt(questionsEng);
+        questionsMem.push(questionEng)
+        inquirer.prompt(questionsMem)
+        .then(data => );
         break;
       case "Intern":
         //call inquier.prompt
