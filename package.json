@@ -1,5 +1,28 @@
 {
   "dependencies": {
-    "inquirer": "^8.1.2"
-  }
+    "inquirer": "^8.1.2",
+    "jest": "^27.0.6"
+  },
+  "name": "createyourteam",
+  "description": "# 10 Object-Oriented Programming: Team Profile Generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessGiannini/CreateYourTeam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessGiannini/CreateYourTeam/issues"
+  },
+  "homepage": "https://github.com/JessGiannini/CreateYourTeam#readme"
 }
