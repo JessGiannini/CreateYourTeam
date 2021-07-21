@@ -7,82 +7,88 @@ const employeesChosen = [];
 // TODO: Create an array of questions for user input
 const questionsMng = [
   {
-    //# user input project title
     type: "input",
     message: "What is the name of the employee?",
     name: "name",
   },
   {
-    //title ## Description \n\n user input describtion
     type: "input",
     message: "What is the ID of the employee?",
     name: "id",
   },
   {
-    //in description add [Live Link](user input project link)
     type: "input",
     message: "What is the email of the employee?",
     name: "email",
   },
   {
-    //in description add [Live Link](user input project link)
     type: "input",
     message: "What is the office number of the team manager?",
     name: "managerOffice",
+  },
+  {
+    type: "list",
+    message: "Would you like to add a team member?",
+    name: "nextMember",
+    choices: ["Yes", "No"],
   },
 ];
 
 const questionsEng = [
   {
-    //# user input project title
     type: "input",
     message: "What is the name of the employee?",
     name: "name",
   },
   {
-    //title ## Description \n\n user input describtion
     type: "input",
     message: "What is the ID of the employee?",
     name: "id",
   },
   {
-    //in description add [Live Link](user input project link)
     type: "input",
     message: "What is the email of the employee?",
     name: "email",
   },
   {
-    //link to id email github
     type: "input",
     message: "What is the Git Hub of the team engineer?",
     name: "engingeerGitHub",
+  },
+  {
+    type: "list",
+    message: "Would you like to add a team member?",
+    name: "nextMember",
+    choices: ["Yes", "No"],
   },
 ];
 
 const questionsInt = [
   {
-    //# user input project title
     type: "input",
     message: "What is the name of the employee?",
     name: "name",
   },
   {
-    //title ## Description \n\n user input describtion
     type: "input",
     message: "What is the ID of the employee?",
     name: "id",
   },
   {
-    //in description add [Live Link](user input project link)
     type: "input",
     message: "What is the email of the employee?",
     name: "email",
   },
   {
-    //link to id school
     type: "input",
     message: "What is the school of the team intern?",
     name: "internSchool",
+  },
+  {
+    type: "list",
+    message: "Would you like to add a team member?",
+    name: "addMember",
+    choices: ["Yes", "No"],
   },
 ];
 
@@ -91,18 +97,14 @@ const questionsNxt = [
     // create a while true function to then create id tags for table of contents
     type: "list",
     message: "Which type of team member would you like to add?",
-    name: "nextMember",
-    choices: ["Engineer", "Intern", "I don't have another member to add."],
+    name: "Eng or Int",
+    choices: ["Engineer", "Intern"],
   },
 ];
 
-// function buildMng() {
-//   inquirer.prompt(questionsMng).next(data);
-// }
-
 //prompts the user with the questions
-function promptUserNxt() {
-  inquirer.prompt(questionsNxt).then((data) => {
+function promptUser() {
+  inquirer.prompt(questionsMng).then((data) => employeesChosen.push(data) {
     switch (data.nextMember) {
       case "Engineer":
         //call inquier.prompt enginer questions
@@ -134,7 +136,6 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-  buildMng();
   promptUser();
 }
 
