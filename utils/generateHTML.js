@@ -18,7 +18,7 @@ function generateHTML(employeesChosen) {
         type="text/css">
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
     <script src="https://kit.fontawesome.com/9de12bd4dc.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./dist/style.css" />
+    <link rel="stylesheet" href="../assets/style.css" />
     <title>My Creative Team</title>
 </head>
 <body>
