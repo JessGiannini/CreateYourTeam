@@ -23,40 +23,56 @@
 <body>
     <div class="jumbotron jumbotron-fluid d-flex align-items-center">
         <div class="container">
-            <h1 class="display-4 text-justify" id="title">My Creative Team</h1>
+            <h1 class="display-4" id="title">My Creative Team</h1>
         </div>
     </div>
     <!-- class="card-content title is-4 is-flex is-justify-content-center" -->
-    <div class="box card-content content-center " id="displaybox">
-        <div class = >
-            <h1>${manangerName}</h1>
-            <h2 class = "icon fas fa-coffee">Manager</h2>
+    <div class="box card-content content-center d-flex" id="displaybox">
+        <div class = "Manager">
+            <div class="header">
+                <h1>${name}</h1>
+                <h2 class = "icon fas fa-coffee">Manager</h2>
+            </div>
+                <div class="text">
+                    <ul>
+                        <li>ID: ${id}</li>
+                        <li>Email: ${email}</li>
+                        <li>Office Number: ${officeNumber}</li>
+                    </ul>
+                 </div>
+        </div>
+    </div>
+    <!-- class="card-content title is-4 is-flex is-justify-content-center" -->
+    <div class="box card-content content-center d-flex" id="displaybox">
+        <div class="Engineer">
+            <div class = "header">
+                <h1>${name}</h1>
+                <h2 class="icon fas fa-glasses">Engineer</h2>
+            </div>
+            <div class="text"></div>
                 <ul>
-                    <li>ID: ${managerID}</li>
-                    <li>Email: ${managerEmail}</li>
-                    <li>Office Number: ${managerOffice}</li>
+                    <li>ID: ${id}</li>
+                    <li>Email: ${email}</li>
+                    <li>GitHub: ${gitHub}</li>
                 </ul>
+            </div>
         </div>
     </div>
     <!-- class="card-content title is-4 is-flex is-justify-content-center" -->
-    <div id="displaybox">
-        <h1>${engineerName}</h1>
-        <h2 class="icon fas fa-glasses">Engineer</h2>
-        <ul>
-            <li>ID: ${engineerID}</li>
-            <li>Email: ${engineerEmail}</li>
-            <li>Office Number: ${engineerGitHub</li>
-        </ul>
-    </div>
-    <!-- class="card-content title is-4 is-flex is-justify-content-center" -->
-    <div id="displaybox">
-        <h1>${manangerName}</h1>
-        <h2 class="icon fas fa-graduation-cap">Intern</h2>
-        <ul>
-            <li>ID: ${managerID}</li>
-            <li>Email: ${managerEmail}</li>
-            <li>Office Number: ${managerOffice</li>
-        </ul>
+    <div class="box card-content content-center d-flex" id="displaybox">
+        <div class="Intern">
+            <div class="header">
+                <h1>${name}</h1>
+                <h2 class="icon fas fa-graduation-cap">Intern</h2>
+            </div>
+            <div class="text"></div>
+            <ul>
+                <li>ID: ${id}</li>
+                <li>Email: ${email}</li>
+                <li>School: ${internSchool}</li>
+            </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
